@@ -1,0 +1,17 @@
+{% extends "grammar_checker_templates/grammar_checker_form.html" %}
+
+{% block content %}
+    <div class="content">
+        <div>
+            <h1>Առցանց բառարան</h1>
+            <p>Առցանց բառարանից օգտվելու համար պարզապես մուտքագրեք ձեր բառը ստորև նշված դաշտում, և սեղմեք որոնման կոճակը</p>
+        </div>
+        <div>
+            <form action="" method="post" class="user_word_form">
+                <input type="text" name="user_word" id="user_word" class="user_word_input" required>
+                <button type="submit">որոնել</button>
+            </form>
+        </div>
+        {% block word_info %}{% endblock %}
+    </div>
+{% endblock %}

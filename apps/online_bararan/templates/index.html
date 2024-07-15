@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <div class="content">
+        <div>
+            <h1>Հայերեն առցանց բառարան</h1>
+        </div>
+        <div class="tools-block">
+            <div class="tool-block">
+                <h2>
+                    ուղղագրիչ
+                </h2>
+                <p>Քերականական սխալների ուղղիչի օգնությամբ դուք կարող եք հեշտությամբ գտնել և ուղղել ձեր տեքստի մեջ
+               գտնվող սխալները:
+                </p>
+                <form action="/grammar_checker" method="get">
+                    <button type="submit">անցնել</button>
+                </form>
+            </div>
+            <div class="tool-block">
+                <h2>
+                    տառադարձիչ
+                </h2>
+                <p>Տառադարձիչի օգնությամբ հեշտությամբ կարող եք լատինատառ գրված բառերի տառերը փոխել հայերենի</p>
+                <form action="/letter_changer" method="get">
+                    <button type="submit">անցնել</button>
+                </form>
+            </div>
+            <div class="tool-block">
+                <h2>
+                    բառարան
+                </h2>
+                <p>Առցանց բառարան, որտեղ հավաքված են ավելի քան 100.000 հայերեն բառերի բացատրություններ\հոմանիշներ\հականիշներ/թարգմանություններ։</p>
+                <form action="/library" method="get">
+                    <button type="submit">անցնել</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

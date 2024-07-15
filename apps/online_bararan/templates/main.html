@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/img/icon-library.png">
+        <link rel="stylesheet" href="/static/styles/styles.css">
+    {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+    {% block scripts %}
+            {% block choose_tools %}
+                <script>
+                    function redirectToPage() {
+                        var selectElement = document.getElementById("tools");
+                        var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+                        window.location.href = selectedOption;
+                    }
+                </script>
+        {% endblock %}
+        {% block grammar_checker_scripts %} {% endblock %}
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+        <header class="container_with_bg">
+                <div class="header-content">
+                    <h2><a href="/"><img src="/static/img/icon-library-128.png" alt="icon">Հայերեն առցանց բառարան</a></h2>
+                </div>
+                <div class="container">
+                    <select id="tools" name="tools" onchange="redirectToPage()">
+                        <option value="">Ընտրեք գործիքը...</option>
+                        <option value="/grammar_checker">ուղղագրիչ</option>
+                        <option value="/letter_changer">տառադարձիչ</option>
+                        <option value="/library">բառարան</option>
+                    </select>
+                </div>
+        </header>
+    {% endblock %}
+    {% block content %} {% endblock %}
+    {% block footer %}
+        <footer>
+            <div>
+                <p>
+                    © 2024 OnlineBararan.am
+                </p>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/grammar_checker">ուղղագրիչ</a>
+                    </li>
+                    <li>
+                        <a href="/letter_changer">տառադարձիչ</a>
+                    </li>
+                    <li>
+                        <a href="/library">բառարան</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    {% endblock %}
+</body>
+</html>

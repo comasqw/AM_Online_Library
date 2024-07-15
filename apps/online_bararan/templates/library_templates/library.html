@@ -1,0 +1,23 @@
+{% extends "library_templates/library_form.html" %}
+
+{% block word_info %}
+    <div class="word_info">
+        <h2>{{ content["user_word"] }}</h2>
+        {% if not error_not_found["error_while_scraping"] %}
+            {% for key, value in content["word_info"].items() %}
+                <div class="word_info_item">
+                    <h3>
+                        {{ key }}
+                    </h3>
+                    <p>
+                        {{ value }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div>
+                <h3 style="color: red;">{{ content["word_info"] }}</h3>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

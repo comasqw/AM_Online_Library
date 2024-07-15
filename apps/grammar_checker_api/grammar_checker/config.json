@@ -1,0 +1,6 @@
+{
+  "paths": {
+    "am_words": "grammar_checker/words.txt",
+    "am_config": "grammar_checker/am_config.json"
+  }
+}

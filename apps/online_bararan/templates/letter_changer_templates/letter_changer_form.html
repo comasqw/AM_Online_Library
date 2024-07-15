@@ -1,0 +1,27 @@
+{% extends "grammar_checker_templates/grammar_checker_form.html" %}
+
+{% block content %}
+    <div class="content">
+        <div>
+            <h1>տառադարձիչ</h1>
+            <p>Տառադարձիչի օգնությամբ հեշտությամբ կարող եք լատինատառ գրված բառերի տառերը փոխել հայերենի</p>
+        </div>
+        <div class="letter_changer">
+            {% block form %}
+                <div>
+                    <form action="/letter_changer" method="post">
+                        <div class="textarea-container">
+                            <textarea name="user_text" id="user_text" cols="70" rows="20" minlength="1" maxlength="5000" required>{% block user_text_textarea %}{% endblock %}</textarea>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit">փոխարինել</button>
+                        </div>
+                    </form>
+                </div>
+            {% endblock %}
+            {% block error %}
+                <div class="result-container">{% block user_text_result %}{% endblock %}</div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
