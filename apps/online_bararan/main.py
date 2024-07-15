@@ -54,4 +54,4 @@ async def custom_http_exception_handler(request: Request, exc: HTTPException):
                                                                         "content": detail["content"]}, status_code=404)
     else:
         logging.exception(detail.get("error"))
-        return templates.TemplateResponse("errors_template/error_500.html", {"request": request}, status_code=500)
+        return templates.TemplateResponse("errors_templates/error_500.html", {"request": request}, status_code=500)
