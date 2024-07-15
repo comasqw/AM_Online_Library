@@ -6,7 +6,7 @@ import httpx
 grammar_checker_router = APIRouter()
 
 templates = Jinja2Templates(directory="templates")
-grammar_api_url = "http://127.0.0.1:8001/check_text_grammar/api/"
+grammar_api_url = "https://grammar-checker-api-tqhi.onrender.com/check_text_grammar/api/"
 
 
 @grammar_checker_router.get("/grammar_checker", response_class=HTMLResponse)
