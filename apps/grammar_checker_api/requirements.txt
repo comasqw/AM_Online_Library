@@ -1,0 +1,2 @@
+fastapi[all]~=0.111.0
+pyspellchecker~=0.8.1

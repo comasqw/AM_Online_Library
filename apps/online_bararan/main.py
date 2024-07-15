@@ -22,12 +22,12 @@ app.include_router(library_router)
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-
-@app.get("/static/styles/styles.css")
-def get_css_file():
-    response = FileResponse("path/to/style.css")
-    response.headers["Cache-Control"] = "no-store"
-    return response
+#
+# @app.get("/static/styles/styles.css")
+# def get_css_file():
+#     response = FileResponse("path/to/style.css")
+#     response.headers["Cache-Control"] = "no-store"
+#     return response
 
 
 @app.get("/", response_class=HTMLResponse)
