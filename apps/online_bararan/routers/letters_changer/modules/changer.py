@@ -20,6 +20,8 @@ letters_to_change = [
     ["rr", "ռ"],
     ["Rr", "Ռ"],
     ["ev", "և"],
+    ["pp", "փ"],
+    ["Pp", "Փ"],
     ["a", "ա"],
     ["b", "բ"],
     ["g", "գ"],
@@ -43,7 +45,6 @@ letters_to_change = [
     ["r", "ր"],
     ["c", "ց"],
     ["w", "ւ"],
-    ["p", "փ"],
     ["q", "ք"],
     ["o", "օ"],
     ["f", "ֆ"],
@@ -69,7 +70,6 @@ letters_to_change = [
     ["R", "Ր"],
     ["C", "Ց"],
     ["W", "Ւ"],
-    ["P", "Փ"],
     ["Q", "Ք"],
     ["O", "Օ"],
     ["F", "Ֆ"],
@@ -88,6 +88,6 @@ async def change_letters(text: str) -> str:
 
 if __name__ == '__main__':
 
-    text = "Barev, yes Aramn yem, yes 16 tarekan em, isk du qani tarekan yes? indz shat hetaqrqira"
+    text = "Bvolvor gvortsiqnyer@"
     changed_text = change_letters(text)
     print(changed_text)

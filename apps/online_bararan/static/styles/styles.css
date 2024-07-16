@@ -205,6 +205,10 @@ footer a {
     color: white;
 }
 
+footer ul {
+    list-style-type: none;
+}
+
 .tools-block {
     display: flex;
     align-items: center;
@@ -214,7 +218,7 @@ footer a {
 .tool-block {
     background-color: #305DAB;
     border-radius: 10px;
-    height: 200px;
+    height: 250px;
     width: 500px;
     margin: 10px;
     padding: 10px;
@@ -223,6 +227,7 @@ footer a {
 .tool-block p {
     color: white;
 }
+
 
 /* Media Queries */
 @media (max-width: 768px) {
