@@ -26,36 +26,18 @@
                 <div class="error-container"></div>
             {% endblock %}
         </div>
+        {% block information %}
+            <div class="information">
+                <h2>
+                    ինչպես օգտվել -
+                </h2>
+                <div>
+                    {% block video_iframe %}
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/P8ECUYfUBv4?si=pqxpF2Bz18vH1SD5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
     </div>
 {% endblock %}
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <link rel="icon" type="image/png" href="/static/img/icon-library.png">-->
-<!--    <link rel="stylesheet" href="/static/styles/styles.css">-->
-<!--    <title>ուղղագրության ստուգում</title>-->
-<!--    <script>-->
-<!--        function redirectToPage() {-->
-<!--            var selectElement = document.getElementById("tools");-->
-<!--            var selectedOption = selectElement.options[selectElement.selectedIndex].value;-->
-<!--            window.location.href = selectedOption;-->
-<!--        }-->
-<!--    </script>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <header class="container_with_bg">-->
-<!--        <div class="header-content">-->
-<!--            <h2><a href="/"><img src="/static/img/icon-library-128.png" alt="icon">Հայերեն առցանց բառարան</a></h2>-->
-<!--        </div>-->
-<!--        <div class="container">-->
-<!--            <select id="tools" name="tools" onchange="redirectToPage()">-->
-<!--                <option value="">Ընտրեք գործիքը...</option>-->
-<!--                <option value="/grammar_checker">ուղղագրիչ</option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--    </header>-->
-<!--</body>-->
-<!--</html>-->

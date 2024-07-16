@@ -1,5 +1,8 @@
 {% extends "grammar_checker_templates/grammar_checker_form.html" %}
 
+{% block title %}Առցանց բառարան{% endblock %}
+
+
 {% block content %}
     <div class="content">
         <div>
@@ -13,5 +16,17 @@
             </form>
         </div>
         {% block word_info %}{% endblock %}
+        {% block information %}
+            <div class="information">
+                <h2>
+                    ինչպես օգտվել -
+                </h2>
+                <div>
+                    {% block video_iframe %}
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/C2bJvAi9n7E?si=xDy3Vop4THWUZFev" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
     </div>
 {% endblock %}
