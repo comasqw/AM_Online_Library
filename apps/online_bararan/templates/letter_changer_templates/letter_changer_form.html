@@ -1,5 +1,8 @@
 {% extends "grammar_checker_templates/grammar_checker_form.html" %}
 
+{% block title %}տառադարձիչ{% endblock %}
+
+
 {% block content %}
     <div class="content">
         <div>
@@ -23,5 +26,17 @@
                 <div class="result-container">{% block user_text_result %}{% endblock %}</div>
             {% endblock %}
         </div>
+        {% block information %}
+            <div class="information">
+                <h2>
+                    ինչպես օգտվել -
+                </h2>
+                <div>
+                    {% block video_iframe %}
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DxDNdu8ELfs?si=MKC33a2VPfBzDzc_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
     </div>
 {% endblock %}

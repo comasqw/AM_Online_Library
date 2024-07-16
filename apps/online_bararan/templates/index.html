@@ -36,5 +36,15 @@
                 </form>
             </div>
         </div>
+        <div class="information">
+            <h2>
+                ինչպես օգտվել -
+            </h2>
+            <div>
+                {% block video_iframe %}
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9qPMN1fGSoc?si=shTnujgpT-2TxUOK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {% endblock %}
+            </div>
+        </div>
     </div>
 {% endblock %}

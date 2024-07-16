@@ -22,17 +22,22 @@ app.include_router(library_router)
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-#
-# @app.get("/static/styles/styles.css")
-# def get_css_file():
-#     response = FileResponse("path/to/style.css")
-#     response.headers["Cache-Control"] = "no-store"
-#     return response
+
+@app.get("/static/styles/styles.css")
+def get_css_file():
+    response = FileResponse("path/to/style.css")
+    response.headers["Cache-Control"] = "no-store"
+    return response
 
 
 @app.get("/", response_class=HTMLResponse)
-def main_page(request: Request):
+async def main_page(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+
+@app.get("/privacy-policy", response_class=HTMLResponse)
+async def privacy_policy(request: Request):
+    return templates.TemplateResponse("privacy_policy.html", {"request": request})
 
 
 @app.exception_handler(StarletteHTTPException)
@@ -53,5 +58,5 @@ async def custom_http_exception_handler(request: Request, exc: HTTPException):
                                                                         "error_not_found": detail["error"],
                                                                         "content": detail["content"]}, status_code=404)
     else:
-        logging.exception(detail.get("error"))
+        # logging.exception(detail.get("error"))
         return templates.TemplateResponse("errors_templates/error_500.html", {"request": request}, status_code=500)
