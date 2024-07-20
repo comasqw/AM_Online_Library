@@ -1,3 +1,3 @@
 {% extends "letter_changer_templates/letter_changer_form.html" %}
-{% block user_text_textarea %}{{ user_text }}{% endblock %}
-{% block user_text_result %}{{ changed_text }}{% endblock %}
+{% block user_text_textarea %}{{ content["user_text"] }}{% endblock %}
+{% block user_text_result %}{{ content["changed_text"] }}{% endblock %}

@@ -42,12 +42,12 @@
     </script>
 {% endblock %}
 
-{% block user_text %}{{ user_text }}{% endblock %}
+{% block user_text %}{{ content["user_text"] }}{% endblock %}
 
 {% block error %}
     <div class="error-container">
         {% if unknown_words %}
-            {% for error, suggestions in unknown_words.items() %}
+            {% for error, suggestions in content["unknown_words"].items() %}
                 <div class="error" data-error="{{ error }}">{{ error }}</div>
                 <div class="suggestions" style="display: none;">
                     {% if suggestions %}
@@ -68,107 +68,3 @@
         {% endif %}
     </div>
 {% endblock %}
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <link rel="icon" type="image/png" href="/static/img/icon-library.png">-->
-<!--    <link rel="stylesheet" href="/static/styles/styles.css">-->
-<!--    <title>ուղղագրության ստուգում</title>-->
-<!--    <script>-->
-<!--        function redirectToPage() {-->
-<!--            var selectElement = document.getElementById("tools");-->
-<!--            var selectedOption = selectElement.options[selectElement.selectedIndex].value;-->
-<!--            window.location.href = selectedOption;-->
-<!--        }-->
-
-<!--        document.addEventListener('DOMContentLoaded', function() {-->
-<!--            updateErrorHandlers();-->
-<!--            updateSuggestionHandlers();-->
-<!--        });-->
-
-<!--        function updateErrorHandlers() {-->
-<!--            let errors = document.querySelectorAll('.error');-->
-<!--            errors.forEach(errorDiv => {-->
-<!--                errorDiv.addEventListener('click', function() {-->
-<!--                    let suggestionsDiv = errorDiv.nextElementSibling;-->
-<!--                    suggestionsDiv.style.display = 'block';-->
-<!--                });-->
-<!--            });-->
-<!--        }-->
-
-<!--        function updateSuggestionHandlers() {-->
-<!--            let suggestions = document.querySelectorAll('.suggestion');-->
-<!--            suggestions.forEach(suggestionSpan => {-->
-<!--                suggestionSpan.addEventListener('click', function() {-->
-<!--                    let userText = document.getElementById('user_text');-->
-<!--                    let text = userText.value;-->
-<!--                    let selectedError = this.closest('.suggestions').previousElementSibling;-->
-<!--                    let errorText = selectedError.getAttribute('data-error');-->
-<!--                    text = text.replace(errorText, suggestionSpan.textContent);-->
-<!--                    userText.value = text;-->
-
-<!--                    selectedError.nextElementSibling.remove();-->
-<!--                    selectedError.remove();-->
-<!--                });-->
-<!--            });-->
-<!--        }-->
-<!--    </script>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <header class="container_with_bg">-->
-<!--        <div class="header-content">-->
-<!--            <h2><a href="/"><img src="/static/img/icon-library-128.png" alt="icon">Հայերեն առցանց բառարան</a></h2>-->
-<!--        </div>-->
-<!--        <div class="container">-->
-<!--            <select id="tools" name="tools" onchange="redirectToPage()">-->
-<!--                <option value="">Ընտրեք գործիքը...</option>-->
-<!--                <option value="/grammar_checker">ուղղագրիչ</option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--    </header>-->
-<!--    <div class="content">-->
-<!--        <div>-->
-<!--            <h1>ուղղագրության ստուգում</h1>-->
-<!--            <p>Քերականական սխալների ուղղիչի օգնությամբ դուք կարող եք հեշտությամբ գտնել և ուղղել ձեր տեքստի մեջ-->
-<!--               գտնվող սխալները,<br>պարզապես անհրաժեշտ է մուտքագրել տեքստը ստորև նշված դաշտում և սեղմել «Ստուգել» կոճակը:</p>-->
-<!--        </div>-->
-<!--        <div class="grammar_checker">-->
-<!--            <div>-->
-<!--                <form id="spellcheckForm" action="/grammar_checker" method="post">-->
-<!--                    <div class="textarea-container">-->
-<!--                        <textarea name="user_text" id="user_text" cols="70" rows="20" minlength="1" maxlength="150" required>{{ user_text }}</textarea>-->
-<!--                    </div>-->
-<!--                    <div class="button-container">-->
-<!--                        <button type="submit">ստուգել</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--            <div class="error-container">-->
-<!--                {% if unknown_words %}-->
-<!--                    {% for error, suggestions in unknown_words.items() %}-->
-<!--                        <div class="error" data-error="{{ error }}">{{ error }}</div>-->
-<!--                        <div class="suggestions" style="display: none;">-->
-<!--                            {% if suggestions %}-->
-<!--                                {% for suggestion in suggestions %}-->
-<!--                                    <span class="suggestion">{{ suggestion }}</span>-->
-<!--                                {% endfor %}-->
-<!--                            {% else %}-->
-<!--                                <span>Անհայտ բառ</span>-->
-<!--                            {% endif %}-->
-<!--                        </div>-->
-<!--                    {% endfor %}-->
-<!--                {% else %}-->
-<!--                    <div>-->
-<!--                        <p style="color: green;">-->
-<!--                            Տեքստում սխալներ չեն հայտնաբերվել-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                {% endif %}-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</body>-->
-<!--</html>-->

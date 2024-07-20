@@ -3,7 +3,7 @@
 {% block word_info %}
     <div class="word_info">
         <h2>{{ content["user_word"] }}</h2>
-        {% if not error_not_found["error_while_scraping"] %}
+        {% if not content["error_not_found"] %}
             {% for key, value in content["word_info"].items() %}
                 <div class="word_info_item">
                     <h3>
