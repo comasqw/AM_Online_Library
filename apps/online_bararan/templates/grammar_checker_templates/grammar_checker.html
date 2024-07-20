@@ -46,7 +46,7 @@
 
 {% block error %}
     <div class="error-container">
-        {% if unknown_words %}
+        {% if content["unknown_words"] %}
             {% for error, suggestions in content["unknown_words"].items() %}
                 <div class="error" data-error="{{ error }}">{{ error }}</div>
                 <div class="suggestions" style="display: none;">
